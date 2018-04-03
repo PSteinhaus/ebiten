@@ -55,9 +55,6 @@ func CursorPosition() (x, y int) {
 // IsMouseButtonPressed returns a boolean indicating whether mouseButton is pressed.
 //
 // This function is concurrent-safe.
-//
-// Note that touch events not longer affect this function's result as of 1.4.0-alpha.
-// Use Touches instead.
 func IsMouseButtonPressed(mouseButton MouseButton) bool {
 	return input.Get().IsMouseButtonPressed(input.MouseButton(mouseButton))
 }
