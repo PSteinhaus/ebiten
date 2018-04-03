@@ -58,11 +58,6 @@ func (s *Stream) Length() int64 {
 	return s.size
 }
 
-// Size is deprecated as of version 1.6.0-alpha. Use Length instead.
-func (s *Stream) Size() int64 {
-	return s.Length()
-}
-
 type decoded struct {
 	data       []float32
 	totalBytes int
