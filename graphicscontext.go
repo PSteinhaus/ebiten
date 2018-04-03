@@ -122,7 +122,7 @@ func (c *graphicsContext) Update(afterFrameUpdate func()) error {
 
 	op.CompositeMode = CompositeModeCopy
 	op.Filter = filterScreen
-	_ = c.screen.DrawImage(c.offscreen, op)
+	c.screen.DrawImage(c.offscreen, op)
 
 	if err := shareable.ResolveStaleImages(); err != nil {
 		return err
