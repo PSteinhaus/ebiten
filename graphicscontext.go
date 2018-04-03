@@ -49,10 +49,10 @@ func (c *graphicsContext) Invalidate() {
 
 func (c *graphicsContext) SetSize(screenWidth, screenHeight int, screenScale float64) {
 	if c.screen != nil {
-		_ = c.screen.Dispose()
+		c.screen.Dispose()
 	}
 	if c.offscreen != nil {
-		_ = c.offscreen.Dispose()
+		c.offscreen.Dispose()
 	}
 	c.offscreen = newVolatileImage(screenWidth, screenHeight)
 
