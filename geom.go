@@ -75,12 +75,6 @@ func (g *GeoM) Concat(other GeoM) {
 	g.impl = g.impl.Concat(other.impl)
 }
 
-// Add is deprecated as of 1.5.0-alpha.
-// Note that this doesn't make sense as an operation for affine matrices.
-func (g *GeoM) Add(other GeoM) {
-	g.impl = g.impl.Add(other.impl)
-}
-
 // Scale scales the matrix by (x, y).
 func (g *GeoM) Scale(x, y float64) {
 	g.impl = g.impl.Scale(x, y)
@@ -112,25 +106,4 @@ func (g *GeoM) Rotate(theta float64) {
 // SetElement sets an element at (i, j).
 func (g *GeoM) SetElement(i, j int, element float64) {
 	g.impl = g.impl.SetElement(i, j, element)
-}
-
-// ScaleGeo is deprecated as of 1.2.0-alpha. Use Scale instead.
-func ScaleGeo(x, y float64) GeoM {
-	g := GeoM{}
-	g.Scale(x, y)
-	return g
-}
-
-// TranslateGeo is deprecated as of 1.2.0-alpha. Use Translate instead.
-func TranslateGeo(tx, ty float64) GeoM {
-	g := GeoM{}
-	g.Translate(tx, ty)
-	return g
-}
-
-// RotateGeo is deprecated as of 1.2.0-alpha. Use Rotate instead.
-func RotateGeo(theta float64) GeoM {
-	g := GeoM{}
-	g.Rotate(theta)
-	return g
 }

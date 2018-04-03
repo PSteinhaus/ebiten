@@ -107,24 +107,6 @@ func (g *GeoM) Concat(other *GeoM) *GeoM {
 	}
 }
 
-// Add is deprecated.
-func (g *GeoM) Add(other *GeoM) *GeoM {
-	if g == nil {
-		g = &GeoM{}
-	}
-	if other == nil {
-		other = &GeoM{}
-	}
-	return &GeoM{
-		a_1: (g.a_1 + 1) + (other.a_1 + 1) - 1,
-		b:   g.b + other.b,
-		c:   g.c + other.c,
-		d_1: (g.d_1 + 1) + (other.d_1 + 1) - 1,
-		tx:  g.tx + other.tx,
-		ty:  g.ty + other.ty,
-	}
-}
-
 // Scale scales the matrix by (x, y).
 func (g *GeoM) Scale(x, y float64) *GeoM {
 	if g == nil {
